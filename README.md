@@ -1,33 +1,94 @@
 # AI Documentation Generator
 
-AI-based system for automatic generation and maintenance of software documentation using LLMs and code analysis.
+System that automatically generates structured software documentation from source code by combining code parsing and LLM-based generation.
 
-## Overview
-This project aims to automate software documentation by combining source code analysis with LLM-based text generation.
+---
 
-It analyzes code structure and generates consistent, up-to-date documentation, reducing manual effort.
+## Problem
 
-## Features
-- Automatic documentation generation for Python codebases
-- Code analysis using Tree-Sitter (Python grammar)
-- LLM-based text generation (OpenAI API)
-- Modular architecture for AI providers (LLMAdapter)
+Software documentation is often outdated or missing, making it difficult for developers to understand systems.  
+Generating useful documentation automatically is challenging because raw code alone does not provide enough structured context for reliable AI outputs.
 
-## Limitations
-- Currently supports Python codebases only
-- Designed as a proof of concept for AI-driven documentation workflows
+---
+
+## Solution
+
+This project builds a pipeline that analyzes source code, extracts structured information, and uses LLMs to generate consistent documentation.
+
+Instead of sending raw code to the model, the system first parses and structures relevant components, improving output quality and reducing noise.
+
+---
+
+## Architecture
+
+The system is organized into modular components:
+
+- **Code Parser**  
+  Uses Tree-Sitter to extract structured elements (functions, classes, signatures)
+
+- **Context Builder**  
+  Transforms parsed data into structured inputs for the LLM
+
+- **LLM Adapter**  
+  Abstraction layer to interact with OpenAI models
+
+- **Documentation Generator**  
+  Produces structured Markdown output
+
+---
+
+## Key Challenges
+
+- **Context structuring**  
+  Raw code leads to poor outputs → solved by parsing + structured inputs
+
+- **Output consistency**  
+  Ensuring documentation follows a predictable format
+
+- **Scalability**  
+  Handling multiple files and maintaining context across them
+
+---
+
+## Trade-offs
+
+- More preprocessing → better quality, but higher complexity  
+- Smaller context → faster, but less complete documentation  
+- Simpler prompts → easier to maintain, but less expressive  
+
+---
+
+## Example Output
+
+(Add example here)
+
+---
 
 ## Tech Stack
+
 - Python
-- OpenAI API (GPT-4.1-mini)
-- Tree-Sitter
+- Tree-Sitter (code parsing)
+- OpenAI API (LLM generation)
 - JSON / Markdown
 
-## Use Case
-This system can be used by software teams to automate documentation workflows and keep technical documentation synchronized with code changes.
+---
 
-## Motivation
-Built as part of my thesis in Software Engineering, focusing on applying AI to real-world software development processes.
+## Limitations
+
+- Currently supports Python only  
+- No automated evaluation of output quality  
+- Not yet optimized for large codebases  
+
+---
+
+## Future Improvements
+
+- Multi-file context handling  
+- Output evaluation metrics  
+- Support for additional languages  
+
+---
 
 ## Author
+
 Franco Martelletti
