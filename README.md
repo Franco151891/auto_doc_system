@@ -14,8 +14,8 @@ Generating useful documentation automatically is challenging because raw code al
 ## Solution
 
 This project builds a pipeline that analyzes source code, extracts structured information, and uses LLMs to generate consistent documentation.
-
 Instead of sending raw code to the model, the system first parses and structures relevant components, improving output quality and reducing noise.
+This highlights the importance of system design around LLMs, not just the model itself.
 
 ---
 
@@ -56,6 +56,9 @@ The system is organized into modular components:
 - **Scalability**  
   Handling multiple files and maintaining context across them
 
+- **Hallucination control**  
+  Ensuring generated documentation remains aligned with the actual code structure and semantics
+
 ---
 
 ## Trade-offs
@@ -80,7 +83,10 @@ The system is organized into modular components:
 
 ## Usage
 
+# Install dependencies
 pip install -r requirements.txt
+
+# Run documentation generation
 python main.py --project-path /path/to/codebase
 
 ---
