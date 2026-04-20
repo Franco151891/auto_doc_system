@@ -60,7 +60,7 @@ The system is organized into modular components:
 
 ## Example Output
 
-(Add example here)
+![Example Output](assets/example_output.png)
 
 ---
 
