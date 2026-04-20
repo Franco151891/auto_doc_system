@@ -83,10 +83,10 @@ The system is organized into modular components:
 
 ## Usage
 
-# Install dependencies
+### Install dependencies
 pip install -r requirements.txt
 
-# Run documentation generation
+### Run documentation generation
 python main.py --project-path /path/to/codebase
 
 ---
