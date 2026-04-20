@@ -58,9 +58,21 @@ The system is organized into modular components:
 
 ---
 
+## Example Input
+
+![Example Input](assets/example_input.png)
+
+---
+
 ## Example Output
 
 ![Example Output](assets/example_output.png)
+
+---
+
+## Usage
+
+python main.py --project-path /root/to/repository
 
 ---
 
