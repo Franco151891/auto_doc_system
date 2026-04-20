@@ -35,6 +35,14 @@ The system is organized into modular components:
 - **Documentation Generator**  
   Produces structured Markdown output
 
+### Data Flow
+
+1. Parse source code using Tree-Sitter
+2. Extract structured elements (functions, classes)
+3. Build structured context for the LLM
+4. Generate documentation via OpenAI API
+5. Format output into Markdown
+
 ---
 
 ## Key Challenges
@@ -58,13 +66,13 @@ The system is organized into modular components:
 
 ---
 
-## Example Input
+## Example
+
+### Input (Python function)
 
 ![Example Input](assets/example_input.png)
 
----
-
-## Example Output
+### Generated Documentation
 
 ![Example Output](assets/example_output.png)
 
@@ -72,7 +80,8 @@ The system is organized into modular components:
 
 ## Usage
 
-python main.py --project-path /root/to/repository
+pip install -r requirements.txt
+python main.py --project-path /path/to/codebase
 
 ---
 
